@@ -27,7 +27,7 @@
 
 	<artifactId>androidannotations-hehaguice</artifactId>
 	<description>The folder containing RoboGuice plugin for AndroidAnnotations</description>
-	<name>RoboGuice plugin parent</name>
+	<name>HeHaGuice plugin parent</name>
 	<packaging>pom</packaging>
 
 	<properties>

@@ -27,7 +27,7 @@
 
 	<artifactId>hehaguice-test</artifactId>
 	<packaging>apk</packaging>
-	<name>RoboGuice plugin functional test suite</name>
+	<name>HeHaGuice plugin functional test suite</name>
 
 	<properties>
 		<main.basedir>${project.parent.parent.basedir}</main.basedir>

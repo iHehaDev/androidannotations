@@ -26,7 +26,7 @@
 	</parent>
 
 	<artifactId>hehaguice</artifactId>
-	<name>RoboGuice Annotation Processor</name>
+	<name>HeHaGuice Annotation Processor</name>
 	<description>AndroidAnnotations plugin for RoboGuice</description>
 
 	<properties>

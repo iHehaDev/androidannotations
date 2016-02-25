@@ -27,7 +27,7 @@
 
 	<artifactId>hehaguice-api</artifactId>
 	<description>The API jar containing the annotations</description>
-	<name>RoboGuice plugin API</name>
+	<name>HeHaGuice plugin API</name>
 
 	<properties>
 		<main.basedir>${project.parent.parent.basedir}</main.basedir>
