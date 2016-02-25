@@ -13,14 +13,17 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-import com.google.inject.AbstractModule;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.EApplication;
 
-public class RobolectricSampleModule extends AbstractModule {
+import android.app.Application;
 
-	@Override
-	protected void configure() {
-	}
+@EApplication
+public class SampleRoboApplication extends Application {
+
+	@Bean
+	public EmptyDependency someDependency;
 
 }

@@ -13,17 +13,8 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-import org.androidannotations.annotations.App;
-import org.androidannotations.annotations.EFragment;
-
-import android.app.Fragment;
-
-@EFragment(R.layout.injected)
-public class MyFragment extends Fragment {
-
-	@App
-	SampleRoboApplication customApplication;
-
+public class Counter {
+	public int count = 0;
 }

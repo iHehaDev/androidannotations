@@ -13,14 +13,29 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
 import org.androidannotations.annotations.App;
-import org.androidannotations.annotations.EBean;
+import org.androidannotations.annotations.EActivity;
 
-@EBean
-public class EnhancedClass {
+import android.app.Activity;
+
+@EActivity
+public class ApplicationInjectedActivity extends Activity {
 
 	@App
 	SampleRoboApplication customApplication;
+
+	SampleRoboApplication methodInjectedApplication;
+	SampleRoboApplication multiInjectedApplication;
+
+	@App
+	void methodInjectedApplication(SampleRoboApplication customApplication) {
+		methodInjectedApplication = customApplication;
+	}
+
+	void multiInjectedApplication(@App SampleRoboApplication app, @App SampleRoboApplication application) {
+		multiInjectedApplication = app;
+	}
+
 }

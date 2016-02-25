@@ -1,4 +1,4 @@
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
 import java.lang.reflect.Method;
 

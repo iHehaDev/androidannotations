@@ -13,18 +13,18 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-import org.androidannotations.annotations.EActivity;
+import java.util.Date;
 
-import roboguice.activity.RoboActivity;
+import com.google.inject.AbstractModule;
+import com.google.inject.Scopes;
 
-//Commented because Maps is not Open Source
-@EActivity
-public class MapActivityWithRoboGuice extends RoboActivity { // MapActivity {
+public class RobolectricSampleTestModule extends AbstractModule {
 
-	// @Override
-	protected boolean isRouteDisplayed() {
-		return false;
+	@Override
+	protected void configure() {
+		bind(Date.class).toProvider(FakeDateProvider.class);
+		bind(Counter.class).in(Scopes.SINGLETON);
 	}
 }

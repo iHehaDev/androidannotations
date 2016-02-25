@@ -13,23 +13,11 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import org.androidannotations.annotations.EBean;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
+@EBean
+public class EmptyDependency {
 
-@RunWith(RobolectricTestRunner.class)
-public class GeneratedApplicationTest {
-
-	@Test
-	public void hasDependency() {
-		SampleRoboApplication application = new SampleRoboApplication_();
-		assertThat(application.someDependency).isNull();
-		application.onCreate();
-		assertThat(application.someDependency).isNotNull();
-	}
-	
 }

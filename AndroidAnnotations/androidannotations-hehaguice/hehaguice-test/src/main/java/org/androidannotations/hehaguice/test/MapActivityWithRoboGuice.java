@@ -13,8 +13,18 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-public class Counter {
-	public int count = 0;
+import org.androidannotations.annotations.EActivity;
+
+import roboguice.activity.RoboActivity;
+
+//Commented because Maps is not Open Source
+@EActivity
+public class MapActivityWithRoboGuice extends RoboActivity { // MapActivity {
+
+	// @Override
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
 }

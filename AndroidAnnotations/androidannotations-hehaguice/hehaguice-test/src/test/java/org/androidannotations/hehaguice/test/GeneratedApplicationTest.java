@@ -13,18 +13,23 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-import java.util.Date;
+import static org.fest.assertions.api.Assertions.assertThat;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Scopes;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 
-public class RobolectricSampleTestModule extends AbstractModule {
+@RunWith(RobolectricTestRunner.class)
+public class GeneratedApplicationTest {
 
-	@Override
-	protected void configure() {
-		bind(Date.class).toProvider(FakeDateProvider.class);
-		bind(Counter.class).in(Scopes.SINGLETON);
+	@Test
+	public void hasDependency() {
+		SampleRoboApplication application = new SampleRoboApplication_();
+		assertThat(application.someDependency).isNull();
+		application.onCreate();
+		assertThat(application.someDependency).isNotNull();
 	}
+	
 }

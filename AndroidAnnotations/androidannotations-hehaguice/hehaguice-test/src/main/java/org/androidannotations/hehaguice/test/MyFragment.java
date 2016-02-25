@@ -13,29 +13,17 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
 import org.androidannotations.annotations.App;
-import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.EFragment;
 
-import android.app.Activity;
+import android.app.Fragment;
 
-@EActivity
-public class ApplicationInjectedActivity extends Activity {
+@EFragment(R.layout.injected)
+public class MyFragment extends Fragment {
 
 	@App
 	SampleRoboApplication customApplication;
-
-	SampleRoboApplication methodInjectedApplication;
-	SampleRoboApplication multiInjectedApplication;
-
-	@App
-	void methodInjectedApplication(SampleRoboApplication customApplication) {
-		methodInjectedApplication = customApplication;
-	}
-
-	void multiInjectedApplication(@App SampleRoboApplication app, @App SampleRoboApplication application) {
-		multiInjectedApplication = app;
-	}
 
 }

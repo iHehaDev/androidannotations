@@ -13,17 +13,14 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.test;
+package org.androidannotations.hehaguice.test;
 
-import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.EApplication;
+import org.androidannotations.annotations.App;
+import org.androidannotations.annotations.EBean;
 
-import android.app.Application;
+@EBean
+public class EnhancedClass {
 
-@EApplication
-public class SampleRoboApplication extends Application {
-
-	@Bean
-	public EmptyDependency someDependency;
-
+	@App
+	SampleRoboApplication customApplication;
 }
