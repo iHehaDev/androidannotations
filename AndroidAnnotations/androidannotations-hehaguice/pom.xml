@@ -25,7 +25,7 @@
 		<version>4.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>androidannotations-roboguice</artifactId>
+	<artifactId>androidannotations-hehaguice</artifactId>
 	<description>The folder containing RoboGuice plugin for AndroidAnnotations</description>
 	<name>RoboGuice plugin parent</name>
 	<packaging>pom</packaging>
@@ -35,21 +35,21 @@
 	</properties>
 
 	<modules>
-		<module>roboguice</module>
-		<module>roboguice-api</module>
-		<module>roboguice-test</module>
+		<module>hehaguice</module>
+		<module>hehaguice-api</module>
+		<module>hehaguice-test</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.androidannotations</groupId>
-				<artifactId>roboguice-api</artifactId>
+				<artifactId>hehaguice-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.androidannotations</groupId>
-				<artifactId>roboguice</artifactId>
+				<artifactId>hehaguice</artifactId>
 				<version>${project.version}</version>
 				<scope>compile</scope>
 			</dependency>

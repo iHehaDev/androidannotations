@@ -20,12 +20,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<artifactId>androidannotations-roboguice</artifactId>
+		<artifactId>androidannotations-hehaguice</artifactId>
 		<groupId>org.androidannotations</groupId>
 		<version>4.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>roboguice-api</artifactId>
+	<artifactId>hehaguice-api</artifactId>
 	<description>The API jar containing the annotations</description>
 	<name>RoboGuice plugin API</name>
 

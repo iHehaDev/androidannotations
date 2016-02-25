@@ -20,12 +20,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<artifactId>androidannotations-roboguice</artifactId>
+		<artifactId>androidannotations-hehaguice</artifactId>
 		<groupId>org.androidannotations</groupId>
 		<version>4.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>roboguice-test</artifactId>
+	<artifactId>hehaguice-test</artifactId>
 	<packaging>apk</packaging>
 	<name>RoboGuice plugin functional test suite</name>
 
@@ -42,7 +42,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.androidannotations</groupId>
-			<artifactId>roboguice</artifactId>
+			<artifactId>hehaguice</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -51,7 +51,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.androidannotations</groupId>
-			<artifactId>roboguice-api</artifactId>
+			<artifactId>hehaguice-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
