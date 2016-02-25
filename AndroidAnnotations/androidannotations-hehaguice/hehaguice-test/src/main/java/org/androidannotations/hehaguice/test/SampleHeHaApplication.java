@@ -21,7 +21,7 @@ import org.androidannotations.annotations.EApplication;
 import android.app.Application;
 
 @EApplication
-public class SampleRoboApplication extends Application {
+public class SampleHeHaApplication extends Application {
 
 	@Bean
 	public EmptyDependency someDependency;

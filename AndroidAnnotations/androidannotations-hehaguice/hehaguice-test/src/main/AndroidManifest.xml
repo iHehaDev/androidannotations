@@ -26,7 +26,7 @@
         android:targetSdkVersion="16" tools:ignore="OldTargetApi"/>
 
     <application
-        android:name=".SampleRoboApplication_"
+        android:name=".SampleHeHaApplication_"
         android:debuggable="true" >
 
         <activity android:name=".MapActivityWithRoboGuice_" />

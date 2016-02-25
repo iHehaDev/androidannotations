@@ -24,17 +24,17 @@ import android.app.Activity;
 public class ApplicationInjectedActivity extends Activity {
 
 	@App
-	SampleRoboApplication customApplication;
+	SampleHeHaApplication customApplication;
 
-	SampleRoboApplication methodInjectedApplication;
-	SampleRoboApplication multiInjectedApplication;
+	SampleHeHaApplication methodInjectedApplication;
+	SampleHeHaApplication multiInjectedApplication;
 
 	@App
-	void methodInjectedApplication(SampleRoboApplication customApplication) {
+	void methodInjectedApplication(SampleHeHaApplication customApplication) {
 		methodInjectedApplication = customApplication;
 	}
 
-	void multiInjectedApplication(@App SampleRoboApplication app, @App SampleRoboApplication application) {
+	void multiInjectedApplication(@App SampleHeHaApplication app, @App SampleHeHaApplication application) {
 		multiInjectedApplication = app;
 	}
 

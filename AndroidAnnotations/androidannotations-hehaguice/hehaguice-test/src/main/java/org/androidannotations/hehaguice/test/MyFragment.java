@@ -24,6 +24,6 @@ import android.app.Fragment;
 public class MyFragment extends Fragment {
 
 	@App
-	SampleRoboApplication customApplication;
+	SampleHeHaApplication customApplication;
 
 }

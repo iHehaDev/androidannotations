@@ -22,5 +22,5 @@ import org.androidannotations.annotations.EBean;
 public class EnhancedClass {
 
 	@App
-	SampleRoboApplication customApplication;
+	SampleHeHaApplication customApplication;
 }

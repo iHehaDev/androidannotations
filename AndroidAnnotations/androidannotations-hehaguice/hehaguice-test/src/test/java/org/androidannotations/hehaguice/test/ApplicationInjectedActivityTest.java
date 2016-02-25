@@ -27,7 +27,7 @@ public class ApplicationInjectedActivityTest {
 
 	@Test
 	public void shouldHaveApplicationAfterCreate() {
-		SampleRoboApplication_ application = new SampleRoboApplication_();
+		SampleHeHaApplication_ application = new SampleHeHaApplication_();
 		application.onCreate();
 
 		ApplicationInjectedActivity_ activity = Robolectric.buildActivity(ApplicationInjectedActivity_.class).create().get();
@@ -39,9 +39,9 @@ public class ApplicationInjectedActivityTest {
 
 	@Test
 	public void applicationCanBeReplacedForTests() {
-		SampleRoboApplication testApp = new SampleRoboApplication();
+		SampleHeHaApplication testApp = new SampleHeHaApplication();
 
-		SampleRoboApplication_.setForTesting(testApp);
+		SampleHeHaApplication_.setForTesting(testApp);
 
 		ApplicationInjectedActivity_ activity = Robolectric.buildActivity(ApplicationInjectedActivity_.class).create().get();
 

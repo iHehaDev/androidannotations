@@ -26,7 +26,7 @@ public class GeneratedApplicationTest {
 
 	@Test
 	public void hasDependency() {
-		SampleRoboApplication application = new SampleRoboApplication_();
+		SampleHeHaApplication application = new SampleHeHaApplication_();
 		assertThat(application.someDependency).isNull();
 		application.onCreate();
 		assertThat(application.someDependency).isNotNull();
