@@ -77,4 +77,9 @@ public class InjectedActivityTest {
 		assertNotNull(context);
 	}
 
+	@Test
+	public void shouldBeAbleToInjectAHeHaContext() throws Exception {
+		assertNotNull(context);
+	}
+
 }
