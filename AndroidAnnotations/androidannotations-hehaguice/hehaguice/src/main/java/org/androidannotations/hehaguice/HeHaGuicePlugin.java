@@ -23,7 +23,7 @@ import org.androidannotations.handler.AnnotationHandler;
 import org.androidannotations.hehaguice.handler.HeHaGuiceHandler;
 import org.androidannotations.plugin.AndroidAnnotationsPlugin;
 
-public class RoboGuicePlugin extends AndroidAnnotationsPlugin {
+public class HeHaGuicePlugin extends AndroidAnnotationsPlugin {
 
 	private static final String NAME = "RoboGuice";
 
