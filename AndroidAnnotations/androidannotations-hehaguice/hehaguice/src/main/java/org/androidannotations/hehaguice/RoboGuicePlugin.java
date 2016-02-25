@@ -20,7 +20,7 @@ import java.util.List;
 
 import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.handler.AnnotationHandler;
-import org.androidannotations.hehaguice.handler.RoboGuiceHandler;
+import org.androidannotations.hehaguice.handler.HeHaGuiceHandler;
 import org.androidannotations.plugin.AndroidAnnotationsPlugin;
 
 public class RoboGuicePlugin extends AndroidAnnotationsPlugin {
@@ -35,7 +35,7 @@ public class RoboGuicePlugin extends AndroidAnnotationsPlugin {
 	@Override
 	public List<AnnotationHandler<?>> getHandlers(AndroidAnnotationsEnvironment androidAnnotationEnv) {
 		List<AnnotationHandler<?>> annotationHandlers = new ArrayList<>();
-		annotationHandlers.add(new RoboGuiceHandler(androidAnnotationEnv));
+		annotationHandlers.add(new HeHaGuiceHandler(androidAnnotationEnv));
 		return annotationHandlers;
 	}
 }

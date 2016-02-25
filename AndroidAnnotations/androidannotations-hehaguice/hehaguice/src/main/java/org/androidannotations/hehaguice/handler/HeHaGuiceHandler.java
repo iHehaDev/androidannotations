@@ -54,11 +54,11 @@ import com.helger.jcodemodel.JSynchronizedBlock;
 import com.helger.jcodemodel.JTryBlock;
 import com.helger.jcodemodel.JVar;
 
-public class RoboGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
+public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 	private final RoboGuiceValidatorHelper roboGuiceValidatorHelper;
 
-	public RoboGuiceHandler(AndroidAnnotationsEnvironment environment) {
+	public HeHaGuiceHandler(AndroidAnnotationsEnvironment environment) {
 		super(RoboGuice.class, environment);
 		roboGuiceValidatorHelper = new RoboGuiceValidatorHelper(annotationHelper);
 	}
