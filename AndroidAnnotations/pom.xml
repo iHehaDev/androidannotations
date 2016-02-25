@@ -143,6 +143,7 @@
 		<module>androidannotations-otto</module>
 		<module>androidannotations-rest-spring</module>
 		<module>androidannotations-roboguice</module>
+		<module>androidannotations-hehaguice</module>
 	</modules>
 
 	<dependencyManagement>
