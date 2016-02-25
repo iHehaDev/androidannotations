@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.handler;
+package org.androidannotations.hehaguice.handler;
 
 import static com.helger.jcodemodel.JExpr._new;
 import static com.helger.jcodemodel.JExpr._super;
@@ -35,12 +35,12 @@ import javax.lang.model.type.TypeMirror;
 import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.ElementValidation;
 import org.androidannotations.handler.BaseAnnotationHandler;
+import org.androidannotations.hehaguice.annotations.RoboGuice;
+import org.androidannotations.hehaguice.api.RoboGuiceHelper;
+import org.androidannotations.hehaguice.helper.RoboGuiceClasses;
+import org.androidannotations.hehaguice.helper.RoboGuiceValidatorHelper;
+import org.androidannotations.hehaguice.holder.RoboGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
-import org.androidannotations.roboguice.annotations.RoboGuice;
-import org.androidannotations.roboguice.api.RoboGuiceHelper;
-import org.androidannotations.roboguice.helper.RoboGuiceClasses;
-import org.androidannotations.roboguice.helper.RoboGuiceValidatorHelper;
-import org.androidannotations.roboguice.holder.RoboGuiceHolder;
 
 import com.helger.jcodemodel.AbstractJClass;
 import com.helger.jcodemodel.IJExpression;

@@ -27,7 +27,7 @@
 
 	<artifactId>hehaguice</artifactId>
 	<name>HeHaGuice Annotation Processor</name>
-	<description>AndroidAnnotations plugin for RoboGuice</description>
+	<description>AndroidAnnotations plugin for HeHaGuice</description>
 
 	<properties>
 		<main.basedir>${project.parent.parent.basedir}</main.basedir>

@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.holder;
+package org.androidannotations.hehaguice.holder;
 
 import static org.androidannotations.helper.ModelConstants.generationSuffix;
 
+import org.androidannotations.hehaguice.helper.RoboGuiceClasses;
 import org.androidannotations.holder.EActivityHolder;
 import org.androidannotations.plugin.PluginClassHolder;
-import org.androidannotations.roboguice.helper.RoboGuiceClasses;
 
 import com.helger.jcodemodel.AbstractJClass;
 import com.helger.jcodemodel.JBlock;

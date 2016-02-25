@@ -13,15 +13,15 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice;
+package org.androidannotations.hehaguice;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.handler.AnnotationHandler;
+import org.androidannotations.hehaguice.handler.RoboGuiceHandler;
 import org.androidannotations.plugin.AndroidAnnotationsPlugin;
-import org.androidannotations.roboguice.handler.RoboGuiceHandler;
 
 public class RoboGuicePlugin extends AndroidAnnotationsPlugin {
 

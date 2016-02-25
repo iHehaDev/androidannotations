@@ -21,7 +21,7 @@ import java.util.Locale;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.roboguice.annotations.RoboGuice;
+import org.androidannotations.hehaguice.annotations.RoboGuice;
 
 import android.app.Activity;
 import android.widget.TextView;

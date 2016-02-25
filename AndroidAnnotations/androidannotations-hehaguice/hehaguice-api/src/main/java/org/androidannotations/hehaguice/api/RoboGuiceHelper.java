@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.androidannotations.roboguice.api;
+package org.androidannotations.hehaguice.api;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
