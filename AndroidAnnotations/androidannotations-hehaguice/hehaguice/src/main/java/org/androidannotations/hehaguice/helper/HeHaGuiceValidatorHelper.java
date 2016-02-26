@@ -20,11 +20,11 @@ import javax.lang.model.util.Elements;
 import org.androidannotations.ElementValidation;
 import org.androidannotations.helper.AnnotationHelper;
 
-public class RoboGuiceValidatorHelper {
+public class HeHaGuiceValidatorHelper {
 
 	private AnnotationHelper annotationHelper;
 
-	public RoboGuiceValidatorHelper(AnnotationHelper annotationHelper) {
+	public HeHaGuiceValidatorHelper(AnnotationHelper annotationHelper) {
 		this.annotationHelper = annotationHelper;
 	}
 

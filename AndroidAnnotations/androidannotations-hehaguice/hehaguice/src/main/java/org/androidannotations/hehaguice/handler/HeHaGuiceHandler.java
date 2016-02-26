@@ -38,7 +38,7 @@ import org.androidannotations.handler.BaseAnnotationHandler;
 import org.androidannotations.hehaguice.annotations.RoboGuice;
 import org.androidannotations.hehaguice.api.RoboGuiceHelper;
 import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
-import org.androidannotations.hehaguice.helper.RoboGuiceValidatorHelper;
+import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
 import org.androidannotations.hehaguice.holder.RoboGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
 
@@ -56,11 +56,11 @@ import com.helger.jcodemodel.JVar;
 
 public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 
-	private final RoboGuiceValidatorHelper roboGuiceValidatorHelper;
+	private final HeHaGuiceValidatorHelper roboGuiceValidatorHelper;
 
 	public HeHaGuiceHandler(AndroidAnnotationsEnvironment environment) {
 		super(RoboGuice.class, environment);
-		roboGuiceValidatorHelper = new RoboGuiceValidatorHelper(annotationHelper);
+		roboGuiceValidatorHelper = new HeHaGuiceValidatorHelper(annotationHelper);
 	}
 
 	@Override
