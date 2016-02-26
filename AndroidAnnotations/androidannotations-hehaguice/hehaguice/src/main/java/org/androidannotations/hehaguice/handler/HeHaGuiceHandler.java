@@ -37,7 +37,7 @@ import org.androidannotations.ElementValidation;
 import org.androidannotations.handler.BaseAnnotationHandler;
 import org.androidannotations.hehaguice.annotations.RoboGuice;
 import org.androidannotations.hehaguice.api.RoboGuiceHelper;
-import org.androidannotations.hehaguice.helper.RoboGuiceClasses;
+import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
 import org.androidannotations.hehaguice.helper.RoboGuiceValidatorHelper;
 import org.androidannotations.hehaguice.holder.RoboGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
@@ -74,7 +74,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 	public void process(Element element, EActivityHolder holder) {
 		RoboGuiceHolder roboGuiceHolder = holder.getPluginHolder(new RoboGuiceHolder(holder));
 
-		holder.getGeneratedClass()._implements(getJClass(RoboGuiceClasses.ROBO_CONTEXT));
+		holder.getGeneratedClass()._implements(getJClass(HeHaGuiceClasses.ROBO_CONTEXT));
 
 		JFieldVar scope = roboGuiceHolder.getScopeField();
 		JFieldVar scopedObjects = roboGuiceHolder.getScopedObjectsField();
@@ -103,7 +103,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 			AbstractJClass listenerClass = codeModelHelper.typeMirrorToJClass(listenerTypeMirror);
 			JFieldVar listener = holder.getGeneratedClass().field(JMod.PRIVATE, listenerClass, "listener" + i + generationSuffix());
 			codeModelHelper.addSuppressWarnings(listener, "unused");
-			listener.annotate(getJClass(RoboGuiceClasses.INJECT));
+			listener.annotate(getJClass(HeHaGuiceClasses.INJECT));
 			i++;
 		}
 	}
@@ -136,47 +136,47 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 	private void beforeCreateMethod(EActivityHolder holder, JFieldVar scope, JFieldVar scopedObjects, JFieldVar eventManager) {
 		JBlock body = holder.getInitBody();
-		AbstractJClass keyWildCard = getJClass(RoboGuiceClasses.KEY).narrow(getCodeModel().wildcard());
+		AbstractJClass keyWildCard = getJClass(HeHaGuiceClasses.KEY).narrow(getCodeModel().wildcard());
 		AbstractJClass scopedHashMap = getClasses().HASH_MAP.narrow(keyWildCard, getClasses().OBJECT);
 		body.assign(scopedObjects, JExpr._new(scopedHashMap));
 
-		JVar injector = body.decl(getJClass(RoboGuiceClasses.ROBO_INJECTOR), "injector_", getJClass(RoboGuiceClasses.ROBO_GUICE).staticInvoke("getInjector").arg(_this()));
-		body.assign(scope, invoke(injector, "getInstance").arg(getJClass(RoboGuiceClasses.CONTEXT_SCOPE).dotclass()));
-		body.assign(eventManager, invoke(injector, "getInstance").arg(getJClass(RoboGuiceClasses.EVENT_MANAGER).dotclass()));
+		JVar injector = body.decl(getJClass(HeHaGuiceClasses.ROBO_INJECTOR), "injector_", getJClass(HeHaGuiceClasses.ROBO_GUICE).staticInvoke("getInjector").arg(_this()));
+		body.assign(scope, invoke(injector, "getInstance").arg(getJClass(HeHaGuiceClasses.CONTEXT_SCOPE).dotclass()));
+		body.assign(eventManager, invoke(injector, "getInstance").arg(getJClass(HeHaGuiceClasses.EVENT_MANAGER).dotclass()));
 		body.add(injector.invoke("injectMembersWithoutViews").arg(_this()));
-		fireEvent(eventManager, body, getJClass(RoboGuiceClasses.ON_CREATE_EVENT), holder.getInitSavedInstanceParam());
+		fireEvent(eventManager, body, getJClass(HeHaGuiceClasses.ON_CREATE_EVENT), holder.getInitSavedInstanceParam());
 	}
 
 	private void onRestartMethod(EActivityHolder holder, JFieldVar eventManager) {
 		JBlock onRestartAfterSuperBlock = holder.getOnRestartAfterSuperBlock();
-		fireEvent(eventManager, onRestartAfterSuperBlock, getJClass(RoboGuiceClasses.ON_RESTART_EVENT));
+		fireEvent(eventManager, onRestartAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_RESTART_EVENT));
 	}
 
 	private void onStartMethod(EActivityHolder holder, JFieldVar eventManager) {
 		JBlock onStartAfterSuperBlock = holder.getOnStartAfterSuperBlock();
-		fireEvent(eventManager, onStartAfterSuperBlock, getJClass(RoboGuiceClasses.ON_START_EVENT));
+		fireEvent(eventManager, onStartAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_START_EVENT));
 	}
 
 	private void onResumeMethod(EActivityHolder holder, JFieldVar eventManager) {
 		JBlock onResumeAfterSuperBlock = holder.getOnResumeAfterSuperBlock();
-		fireEvent(eventManager, onResumeAfterSuperBlock, getJClass(RoboGuiceClasses.ON_RESUME_EVENT));
+		fireEvent(eventManager, onResumeAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_RESUME_EVENT));
 	}
 
 	private void onPauseMethod(EActivityHolder holder, JFieldVar eventManager) {
 		JBlock onPauseAfterSuperBlock = holder.getOnPauseAfterSuperBlock();
-		fireEvent(eventManager, onPauseAfterSuperBlock, getJClass(RoboGuiceClasses.ON_PAUSE_EVENT));
+		fireEvent(eventManager, onPauseAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_PAUSE_EVENT));
 	}
 
 	private void onNewIntentMethod(EActivityHolder holder, JFieldVar eventManager) {
 		JBlock onNewIntentAfterSuperBlock = holder.getOnNewIntentAfterSuperBlock();
-		fireEvent(eventManager, onNewIntentAfterSuperBlock, getJClass(RoboGuiceClasses.ON_NEW_INTENT_EVENT));
+		fireEvent(eventManager, onNewIntentAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_NEW_INTENT_EVENT));
 	}
 
 	private void onStopMethod(EActivityHolder holder, JFieldVar eventManager) {
 		JBlock onStopBlock = new JBlock().bracesRequired(false).indentRequired(false);
 
 		JTryBlock tryBlock = onStopBlock._try();
-		fireEvent(eventManager, tryBlock.body(), getJClass(RoboGuiceClasses.ON_STOP_EVENT));
+		fireEvent(eventManager, tryBlock.body(), getJClass(HeHaGuiceClasses.ON_STOP_EVENT));
 		JBlock finallyBody = tryBlock._finally();
 
 		finallyBody.invoke(_super(), "onStop");
@@ -189,11 +189,11 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		JBlock onDestroyBlock = new JBlock().bracesRequired(false).indentRequired(false);
 
 		JTryBlock tryBlock = onDestroyBlock._try();
-		fireEvent(eventManager, tryBlock.body(), getJClass(RoboGuiceClasses.ON_DESTROY_EVENT));
+		fireEvent(eventManager, tryBlock.body(), getJClass(HeHaGuiceClasses.ON_DESTROY_EVENT));
 		JBlock finallyBody = tryBlock._finally();
 
 		JTryBlock tryInFinally = finallyBody._try();
-		tryInFinally.body().add(getJClass(RoboGuiceClasses.ROBO_GUICE).staticInvoke("destroyInjector").arg(_this()));
+		tryInFinally.body().add(getJClass(HeHaGuiceClasses.ROBO_GUICE).staticInvoke("destroyInjector").arg(_this()));
 		tryInFinally._finally().invoke(_super(), "onDestroy");
 
 		JMethod onDestroy = holder.getOnDestroy();
@@ -204,13 +204,13 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		JVar currentConfig = roboGuiceHolder.getCurrentConfig();
 		IJExpression newConfig = holder.getOnConfigurationChangedNewConfigParam();
 		JBlock onConfigurationChangedAfterSuperBlock = holder.getOnConfigurationChangedAfterSuperBlock();
-		fireEvent(eventManager, onConfigurationChangedAfterSuperBlock, getJClass(RoboGuiceClasses.ON_CONFIGURATION_CHANGED_EVENT), currentConfig, newConfig);
+		fireEvent(eventManager, onConfigurationChangedAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_CONFIGURATION_CHANGED_EVENT), currentConfig, newConfig);
 	}
 
 	private void onContentChangedMethod(RoboGuiceHolder holder, JFieldVar scope, JFieldVar eventManager) {
 		JBlock onContentChangedAfterSuperBlock = holder.getOnContentChangedAfterSuperBlock();
 
-		JSynchronizedBlock synchronizedBlock = onContentChangedAfterSuperBlock.synchronizedBlock(getJClass(RoboGuiceClasses.CONTEXT_SCOPE).dotclass());
+		JSynchronizedBlock synchronizedBlock = onContentChangedAfterSuperBlock.synchronizedBlock(getJClass(HeHaGuiceClasses.CONTEXT_SCOPE).dotclass());
 		JBlock synchronizedBlockBody = synchronizedBlock.body();
 		synchronizedBlockBody.invoke(scope, "enter").arg(_this());
 		JTryBlock tryBlock = synchronizedBlockBody._try();
@@ -218,7 +218,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		tryBlock._finally().invoke(scope, "exit").arg(_this());
 		onContentChangedAfterSuperBlock.add(synchronizedBlock);
 
-		fireEvent(eventManager, onContentChangedAfterSuperBlock, getJClass(RoboGuiceClasses.ON_CONTENT_CHANGED_EVENT));
+		fireEvent(eventManager, onContentChangedAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_CONTENT_CHANGED_EVENT));
 	}
 
 	private void onActivityResultMethod(EActivityHolder holder, JFieldVar eventManager) {
@@ -227,7 +227,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		JVar resultCode = holder.getOnActivityResultResultCodeParam();
 		JVar data = holder.getOnActivityResultDataParam();
 
-		fireEvent(eventManager, onActivityResultAfterSuperBlock, getJClass(RoboGuiceClasses.ON_ACTIVITY_RESULT_EVENT), requestCode, resultCode, data);
+		fireEvent(eventManager, onActivityResultAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_ACTIVITY_RESULT_EVENT), requestCode, resultCode, data);
 	}
 
 	private void fireEvent(JFieldVar eventManager, JBlock body, AbstractJClass eventClass, IJExpression... eventArguments) {

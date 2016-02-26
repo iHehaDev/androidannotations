@@ -15,7 +15,7 @@
  */
 package org.androidannotations.hehaguice.helper;
 
-public final class RoboGuiceClasses {
+public final class HeHaGuiceClasses {
 
 	public static final String ROBO_APPLICATION = "roboguice.application.RoboApplication";
 	public static final String ON_START_EVENT_OLD = "roboguice.activity.event.OnStartEvent";
@@ -41,7 +41,7 @@ public final class RoboGuiceClasses {
 	public static final String ON_CONTENT_VIEW_AVAILABLE_EVENT = "roboguice.activity.event.OnContentViewAvailableEvent";
 	public static final String ON_CREATE_EVENT = "roboguice.context.event.OnCreateEvent";
 
-	private RoboGuiceClasses() {
+	private HeHaGuiceClasses() {
 
 	}
 }

@@ -31,15 +31,15 @@ public class RoboGuiceValidatorHelper {
 	public void hasRoboGuiceJars(ElementValidation valid) {
 		Elements elementUtils = annotationHelper.getElementUtils();
 
-		if (elementUtils.getTypeElement(RoboGuiceClasses.ROBO_CONTEXT) == null) {
-			valid.addError("Could not find the RoboGuice framework in the classpath, the following class is missing: " + RoboGuiceClasses.ROBO_CONTEXT);
+		if (elementUtils.getTypeElement(HeHaGuiceClasses.ROBO_CONTEXT) == null) {
+			valid.addError("Could not find the RoboGuice framework in the classpath, the following class is missing: " + HeHaGuiceClasses.ROBO_CONTEXT);
 		}
 
-		if (elementUtils.getTypeElement(RoboGuiceClasses.ROBO_APPLICATION) != null) {
+		if (elementUtils.getTypeElement(HeHaGuiceClasses.ROBO_APPLICATION) != null) {
 			valid.addError("It seems you are using an old version of RoboGuice. Be sure to use version 3.0!");
 		}
 
-		if (elementUtils.getTypeElement(RoboGuiceClasses.ON_START_EVENT_OLD) != null) {
+		if (elementUtils.getTypeElement(HeHaGuiceClasses.ON_START_EVENT_OLD) != null) {
 			valid.addError("It seems you are using an old version of RoboGuice. Be sure to use version 3.0!");
 		}
 	}
