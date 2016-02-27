@@ -39,7 +39,7 @@ import org.androidannotations.hehaguice.annotations.RoboGuice;
 import org.androidannotations.hehaguice.api.RoboGuiceHelper;
 import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
 import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
-import org.androidannotations.hehaguice.holder.RoboGuiceHolder;
+import org.androidannotations.hehaguice.holder.HeHaGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
 
 import com.helger.jcodemodel.AbstractJClass;
@@ -72,7 +72,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 	@Override
 	public void process(Element element, EActivityHolder holder) {
-		RoboGuiceHolder roboGuiceHolder = holder.getPluginHolder(new RoboGuiceHolder(holder));
+		HeHaGuiceHolder roboGuiceHolder = holder.getPluginHolder(new HeHaGuiceHolder(holder));
 
 		holder.getGeneratedClass()._implements(getJClass(HeHaGuiceClasses.ROBO_CONTEXT));
 
@@ -200,14 +200,14 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		codeModelHelper.replaceSuperCall(onDestroy, onDestroyBlock);
 	}
 
-	private void onConfigurationChangedMethod(EActivityHolder holder, RoboGuiceHolder roboGuiceHolder, JFieldVar eventManager) {
+	private void onConfigurationChangedMethod(EActivityHolder holder, HeHaGuiceHolder roboGuiceHolder, JFieldVar eventManager) {
 		JVar currentConfig = roboGuiceHolder.getCurrentConfig();
 		IJExpression newConfig = holder.getOnConfigurationChangedNewConfigParam();
 		JBlock onConfigurationChangedAfterSuperBlock = holder.getOnConfigurationChangedAfterSuperBlock();
 		fireEvent(eventManager, onConfigurationChangedAfterSuperBlock, getJClass(HeHaGuiceClasses.ON_CONFIGURATION_CHANGED_EVENT), currentConfig, newConfig);
 	}
 
-	private void onContentChangedMethod(RoboGuiceHolder holder, JFieldVar scope, JFieldVar eventManager) {
+	private void onContentChangedMethod(HeHaGuiceHolder holder, JFieldVar scope, JFieldVar eventManager) {
 		JBlock onContentChangedAfterSuperBlock = holder.getOnContentChangedAfterSuperBlock();
 
 		JSynchronizedBlock synchronizedBlock = onContentChangedAfterSuperBlock.synchronizedBlock(getJClass(HeHaGuiceClasses.CONTEXT_SCOPE).dotclass());

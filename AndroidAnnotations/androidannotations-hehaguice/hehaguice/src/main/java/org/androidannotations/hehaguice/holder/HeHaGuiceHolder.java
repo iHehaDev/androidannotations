@@ -28,7 +28,7 @@ import com.helger.jcodemodel.JFieldVar;
 import com.helger.jcodemodel.JMod;
 import com.helger.jcodemodel.JVar;
 
-public class RoboGuiceHolder extends PluginClassHolder<EActivityHolder> {
+public class HeHaGuiceHolder extends PluginClassHolder<EActivityHolder> {
 
 	private static final String ON_CONTENT_CHANGED_JAVADOC = "We cannot simply copy the " + "code from RoboActivity, because that can cause classpath issues. "
 			+ "For further details see issue #1116.";
@@ -40,7 +40,7 @@ public class RoboGuiceHolder extends PluginClassHolder<EActivityHolder> {
 	protected JVar currentConfig;
 	protected JBlock onContentChangedAfterSuperBlock;
 
-	public RoboGuiceHolder(EActivityHolder holder) {
+	public HeHaGuiceHolder(EActivityHolder holder) {
 		super(holder);
 	}
 
