@@ -22,9 +22,9 @@ import java.lang.reflect.Method;
  * Reflection utils to call methods which are accessible in RoboGuice package
  * but not from outside.
  */
-public final class RoboGuiceHelper {
+public final class HeHaGuiceHelper {
 
-	private RoboGuiceHelper() {
+	private HeHaGuiceHelper() {
 	}
 
 	public static void callInjectViews(Object activity) {

@@ -36,7 +36,7 @@ import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.ElementValidation;
 import org.androidannotations.handler.BaseAnnotationHandler;
 import org.androidannotations.hehaguice.annotations.HeHaGuice;
-import org.androidannotations.hehaguice.api.RoboGuiceHelper;
+import org.androidannotations.hehaguice.api.HeHaGuiceHelper;
 import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
 import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
 import org.androidannotations.hehaguice.holder.HeHaGuiceHolder;
@@ -214,7 +214,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		JBlock synchronizedBlockBody = synchronizedBlock.body();
 		synchronizedBlockBody.invoke(scope, "enter").arg(_this());
 		JTryBlock tryBlock = synchronizedBlockBody._try();
-		tryBlock.body().staticInvoke(getJClass(RoboGuiceHelper.class), "callInjectViews").arg(_this());
+		tryBlock.body().staticInvoke(getJClass(HeHaGuiceHelper.class), "callInjectViews").arg(_this());
 		tryBlock._finally().invoke(scope, "exit").arg(_this());
 		onContentChangedAfterSuperBlock.add(synchronizedBlock);
 
