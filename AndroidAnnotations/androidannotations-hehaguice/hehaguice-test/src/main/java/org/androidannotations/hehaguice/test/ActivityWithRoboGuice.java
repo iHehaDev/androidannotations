@@ -21,7 +21,7 @@ import java.util.Locale;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.hehaguice.annotations.FluxStore;
+// import org.androidannotations.hehaguice.annotations.FluxStore;
 import org.androidannotations.hehaguice.annotations.HeHaGuice;
 
 import android.app.Activity;
@@ -36,7 +36,7 @@ import roboguice.inject.InjectView;
  * Adapted from http://pivotal.github.com/robolectric/roboguice.html
  */
 @HeHaGuice
-@FluxStore
+// @FluxStore
 @EActivity(R.layout.injected)
 public class ActivityWithRoboGuice extends Activity {
 
