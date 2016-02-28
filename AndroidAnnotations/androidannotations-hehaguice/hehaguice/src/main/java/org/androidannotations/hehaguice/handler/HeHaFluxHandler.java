@@ -57,18 +57,18 @@ import com.helger.jcodemodel.JVar;
 
 public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 
-	private final HeHaGuiceValidatorHelper roboGuiceValidatorHelper;
+	private final HeHaGuiceValidatorHelper hehaGuiceValidatorHelper;
 
 	public HeHaFluxHandler(AndroidAnnotationsEnvironment environment) {
 		super(HeHaGuice.class, environment);
-		roboGuiceValidatorHelper = new HeHaGuiceValidatorHelper(annotationHelper);
+		hehaGuiceValidatorHelper = new HeHaGuiceValidatorHelper(annotationHelper);
 	}
 
 	@Override
 	public void validate(Element element, ElementValidation validation) {
 		validatorHelper.hasEActivity(element, validation);
 
-		roboGuiceValidatorHelper.hasRoboGuiceJars(validation);
+		// hehaGuiceValidatorHelper.hasRoboGuiceJars(validation);
 	}
 
 	@Override
@@ -77,24 +77,24 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 		holder.getGeneratedClass()._implements(getJClass(HeHaGuiceClasses.ROBO_CONTEXT));
 
-		JFieldVar scope = roboGuiceHolder.getScopeField();
-		JFieldVar scopedObjects = roboGuiceHolder.getScopedObjectsField();
-		JFieldVar eventManager = roboGuiceHolder.getEventManagerField();
-		roboGuiceHolder.getContentViewListenerField();
-		listenerFields(element, holder);
+		// JFieldVar scope = roboGuiceHolder.getScopeField();
+		// JFieldVar scopedObjects = roboGuiceHolder.getScopedObjectsField();
+		// JFieldVar eventManager = roboGuiceHolder.getEventManagerField();
+		// roboGuiceHolder.getContentViewListenerField();
+		// listenerFields(element, holder);
 
-		beforeCreateMethod(holder, scope, scopedObjects, eventManager);
-		onRestartMethod(holder, eventManager);
-		onStartMethod(holder, eventManager);
-		onResumeMethod(holder, eventManager);
-		onPauseMethod(holder, eventManager);
-		onNewIntentMethod(holder, eventManager);
-		onStopMethod(holder, eventManager);
-		onDestroyMethod(holder, eventManager);
-		onConfigurationChangedMethod(holder, roboGuiceHolder, eventManager);
-		onContentChangedMethod(roboGuiceHolder, scope, eventManager);
-		onActivityResultMethod(holder, eventManager);
-		getScopedObjectMap(holder, scopedObjects);
+		// beforeCreateMethod(holder, scope, scopedObjects, eventManager);
+		// onRestartMethod(holder, eventManager);
+		// onStartMethod(holder, eventManager);
+		// onResumeMethod(holder, eventManager);
+		// onPauseMethod(holder, eventManager);
+		// onNewIntentMethod(holder, eventManager);
+		// onStopMethod(holder, eventManager);
+		// onDestroyMethod(holder, eventManager);
+		// onConfigurationChangedMethod(holder, roboGuiceHolder, eventManager);
+		// onContentChangedMethod(roboGuiceHolder, scope, eventManager);
+		// onActivityResultMethod(holder, eventManager);
+		// getScopedObjectMap(holder, scopedObjects);
 	}
 
 	private void listenerFields(Element element, EActivityHolder holder) {

@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.handler.AnnotationHandler;
+import org.androidannotations.hehaguice.handler.HeHaFluxHandler;
 import org.androidannotations.hehaguice.handler.HeHaGuiceHandler;
 import org.androidannotations.plugin.AndroidAnnotationsPlugin;
 
@@ -36,6 +37,7 @@ public class HeHaGuicePlugin extends AndroidAnnotationsPlugin {
 	public List<AnnotationHandler<?>> getHandlers(AndroidAnnotationsEnvironment androidAnnotationEnv) {
 		List<AnnotationHandler<?>> annotationHandlers = new ArrayList<>();
 		annotationHandlers.add(new HeHaGuiceHandler(androidAnnotationEnv));
+		annotationHandlers.add(new HeHaFluxHandler(androidAnnotationEnv));
 		return annotationHandlers;
 	}
 }
