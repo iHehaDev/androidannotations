@@ -35,8 +35,8 @@ import javax.lang.model.element.Element;
 import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.ElementValidation;
 import org.androidannotations.handler.BaseAnnotationHandler;
-// import org.androidannotations.hehaguice.annotations.FluxStore;
-import org.androidannotations.hehaguice.annotations.HeHaGuice;
+import org.androidannotations.hehaguice.annotations.FluxStore;
+// import org.androidannotations.hehaguice.annotations.HeHaGuice;
 // import org.androidannotations.hehaguice.api.HeHaGuiceHelper;
 import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
 import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
@@ -49,7 +49,7 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 	private final HeHaGuiceValidatorHelper hehaGuiceValidatorHelper;
 
 	public HeHaFluxHandler(AndroidAnnotationsEnvironment environment) {
-		super(HeHaGuice.class, environment);
+		super(FluxStore.class, environment);
 		hehaGuiceValidatorHelper = new HeHaGuiceValidatorHelper(annotationHelper);
 	}
 
