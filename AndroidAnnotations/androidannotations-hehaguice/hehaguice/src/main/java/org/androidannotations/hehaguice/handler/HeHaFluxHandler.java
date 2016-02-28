@@ -43,6 +43,7 @@ import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
 import org.androidannotations.hehaguice.holder.HeHaGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
 
+// import com.helger.jcodemodel.JCodeModel;
 import com.helger.jcodemodel.JFieldVar;
 import com.helger.jcodemodel.JMethod;
 import com.helger.jcodemodel.JMod;
@@ -68,7 +69,7 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 		HeHaGuiceHolder roboGuiceHolder = holder.getPluginHolder(new HeHaGuiceHolder(holder));
 
 		JFieldVar scopedObjects = roboGuiceHolder.getScopedObjectsField();
-		
+
 		onStateChanged(holder, scopedObjects);
 		// holder.getGeneratedClass()._implements(getJClass(HeHaGuiceClasses.ROBO_CONTEXT));
 
@@ -79,9 +80,9 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 	//     return scopedObjects_;
 	// }
 	private void onStateChanged(EActivityHolder holder, JFieldVar scopedObjectMap) {
-		JMethod getScopedObjectMapMethod = holder.getGeneratedClass().method(JMod.PUBLIC, scopedObjectMap.type(), "onStateChanged");
+		JMethod getScopedObjectMapMethod = holder.getGeneratedClass().method(JMod.PUBLIC, getCodeModel().VOID, "onStateChanged");
 		// getScopedObjectMapMethod.annotate(Override.class);
-		getScopedObjectMapMethod.body()._return(scopedObjectMap);
+		// getScopedObjectMapMethod.body()._return(cm.VOID);
 	}
 
 
