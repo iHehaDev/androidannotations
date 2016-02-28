@@ -55,11 +55,11 @@ import com.helger.jcodemodel.JSynchronizedBlock;
 import com.helger.jcodemodel.JTryBlock;
 import com.helger.jcodemodel.JVar;
 
-public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
+public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 	private final HeHaGuiceValidatorHelper roboGuiceValidatorHelper;
 
-	public HeHaGuiceHandler(AndroidAnnotationsEnvironment environment) {
+	public HeHaFluxHandler(AndroidAnnotationsEnvironment environment) {
 		super(HeHaGuice.class, environment);
 		roboGuiceValidatorHelper = new HeHaGuiceValidatorHelper(annotationHelper);
 	}
