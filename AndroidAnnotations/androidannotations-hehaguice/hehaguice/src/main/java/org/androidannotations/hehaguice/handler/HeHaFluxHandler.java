@@ -38,7 +38,7 @@ import org.androidannotations.handler.BaseAnnotationHandler;
 import org.androidannotations.hehaguice.annotations.FluxStore;
 // import org.androidannotations.hehaguice.annotations.HeHaGuice;
 // import org.androidannotations.hehaguice.api.HeHaGuiceHelper;
-import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
+// import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
 import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
 import org.androidannotations.hehaguice.holder.HeHaGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
@@ -64,7 +64,19 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 	public void process(Element element, EActivityHolder holder) {
 		HeHaGuiceHolder roboGuiceHolder = holder.getPluginHolder(new HeHaGuiceHolder(holder));
 
-		holder.getGeneratedClass()._implements(getJClass(HeHaGuiceClasses.ROBO_CONTEXT));
+		// holder.getGeneratedClass()._implements(getJClass(HeHaGuiceClasses.ROBO_CONTEXT));
 
 	}
+
+// @Override
+// public HashMap<Key<?> , Object> getScopedObjectMap() {
+//     return scopedObjects_;
+// }
+// private void getScopedObjectMap(EActivityHolder holder, JFieldVar scopedObjectMap) {
+// 	JMethod getScopedObjectMapMethod = holder.getGeneratedClass().method(JMod.PUBLIC, scopedObjectMap.type(), "getScopedObjectMap");
+// 	getScopedObjectMapMethod.annotate(Override.class);
+// 	getScopedObjectMapMethod.body()._return(scopedObjectMap);
+// }
+
+
 }
