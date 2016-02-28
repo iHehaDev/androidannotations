@@ -35,7 +35,7 @@ import javax.lang.model.type.TypeMirror;
 import org.androidannotations.AndroidAnnotationsEnvironment;
 import org.androidannotations.ElementValidation;
 import org.androidannotations.handler.BaseAnnotationHandler;
-import org.androidannotations.hehaguice.annotations.RoboGuice;
+import org.androidannotations.hehaguice.annotations.HeHaGuice;
 import org.androidannotations.hehaguice.api.RoboGuiceHelper;
 import org.androidannotations.hehaguice.helper.HeHaGuiceClasses;
 import org.androidannotations.hehaguice.helper.HeHaGuiceValidatorHelper;
@@ -59,7 +59,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 	private final HeHaGuiceValidatorHelper roboGuiceValidatorHelper;
 
 	public HeHaGuiceHandler(AndroidAnnotationsEnvironment environment) {
-		super(RoboGuice.class, environment);
+		super(HeHaGuice.class, environment);
 		roboGuiceValidatorHelper = new HeHaGuiceValidatorHelper(annotationHelper);
 	}
 
@@ -112,7 +112,7 @@ public class HeHaGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 		List<? extends AnnotationMirror> annotationMirrors = activityElement.getAnnotationMirrors();
 
-		String annotationName = RoboGuice.class.getName();
+		String annotationName = HeHaGuice.class.getName();
 		for (AnnotationMirror annotationMirror : annotationMirrors) {
 			if (annotationName.equals(annotationMirror.getAnnotationType().toString())) {
 				for (Map.Entry<? extends ExecutableElement, ? extends AnnotationValue> entry : annotationMirror.getElementValues().entrySet()) {

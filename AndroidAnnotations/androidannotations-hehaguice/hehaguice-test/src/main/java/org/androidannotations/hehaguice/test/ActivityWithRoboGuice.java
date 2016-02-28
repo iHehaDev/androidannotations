@@ -21,7 +21,7 @@ import java.util.Locale;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.hehaguice.annotations.RoboGuice;
+import org.androidannotations.hehaguice.annotations.HeHaGuice;
 
 import android.app.Activity;
 import android.widget.TextView;
@@ -34,7 +34,7 @@ import roboguice.inject.InjectView;
 /**
  * Adapted from http://pivotal.github.com/robolectric/roboguice.html
  */
-@RoboGuice(Counter.class)
+@HeHaGuice(Counter.class)
 @EActivity(R.layout.injected)
 public class ActivityWithRoboGuice extends Activity {
 

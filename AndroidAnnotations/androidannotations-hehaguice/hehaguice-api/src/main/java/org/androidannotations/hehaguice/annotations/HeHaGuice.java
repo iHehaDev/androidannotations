@@ -64,7 +64,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.TYPE)
-public @interface RoboGuice {
+public @interface HeHaGuice {
 	/**
 	 * The RoboGuice listener classes to bind to this activity. Will add an
 	 * injected listener field to the subclass.
