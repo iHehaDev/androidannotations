@@ -44,6 +44,7 @@ import org.androidannotations.hehaguice.holder.HeHaGuiceHolder;
 import org.androidannotations.holder.EActivityHolder;
 
 // import com.helger.jcodemodel.JCodeModel;
+import com.helger.jcodemodel.JBlock;
 import com.helger.jcodemodel.JFieldVar;
 import com.helger.jcodemodel.JMethod;
 import com.helger.jcodemodel.JMod;
@@ -79,8 +80,28 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 	// public HashMap<Key<?> , Object> getScopedObjectMap() {
 	//     return scopedObjects_;
 	// }
+	// JSONObject currentState = _state;
+	// 
+	// JSONObject latestState = getStateFromStore();
+	// if (!DeepEquals.deepEquals(currentState, latestState)) {
+	//     RealTimeStep realTimeStep = StepStore.instance().getRealTimeStep(DeviceStore.instance().getSelectedDeviceSerialNumber());
+	//     if (realTimeStep != null) {
+	//         setStep((int) realTimeStep.getStep());
+	//         setCalories((int) realTimeStep.getCalories());
+	//         setActiveTime((int) realTimeStep.getRuntime());
+	//         setDistance(realTimeStep.getDistance());
+	//         _state = latestState;
+	//     }
+	// }
+	// http://phax.github.io/jcodemodel/site-2.8.0/apidocs/index.html
+	// 
 	private void onStateChanged(EActivityHolder holder, JFieldVar scopedObjectMap) {
 		JMethod getScopedObjectMapMethod = holder.getGeneratedClass().method(JMod.PUBLIC, getCodeModel().VOID, "onStateChanged");
+		// http://phax.github.io/jcodemodel/site-2.8.0/apidocs/com/helger/jcodemodel/JMethod.html
+
+		JBlock block = getScopedObjectMapMethod.body();
+		// http://phax.github.io/jcodemodel/site-2.8.0/apidocs/com/helger/jcodemodel/JBlock.html
+
 		// getScopedObjectMapMethod.annotate(Override.class);
 		// getScopedObjectMapMethod.body()._return(cm.VOID);
 	}
