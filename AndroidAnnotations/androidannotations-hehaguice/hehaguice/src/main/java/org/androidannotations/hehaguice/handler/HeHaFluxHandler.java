@@ -94,6 +94,7 @@ public class HeHaFluxHandler extends BaseAnnotationHandler<EActivityHolder> {
 	//     }
 	// }
 	// http://phax.github.io/jcodemodel/site-2.8.0/apidocs/index.html
+	// http://www.programcreek.com/java-api-examples/index.php?source_dir=jcodemodel-master/src/test/java/com/helger/jcodemodel/supplementary/issues/Issue31FuncTest.java
 	// 
 	private void onStateChanged(EActivityHolder holder, JFieldVar scopedObjectMap) {
 		JMethod getScopedObjectMapMethod = holder.getGeneratedClass().method(JMod.PUBLIC, getCodeModel().VOID, "onStateChanged");
